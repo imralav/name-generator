@@ -1,0 +1,37 @@
+{
+  "pattern": "El {name} De'{surname}",
+  "files": {
+    "name": [
+      "names.json"
+    ]
+  },
+  "shortName": [
+    "Robert",
+    "Robert2",
+    "Robert3",
+    "Robert4",
+    "Robert5"
+  ],
+  "shortSurname": [
+    "Salmon",
+    "Salmon2",
+    "Salmon3",
+    "Salmon4"
+  ],
+  "name": [
+    "Roman",
+    "Roman2",
+    "Roman3",
+    "Roman4",
+    "Roman5"
+  ],
+  "surname": [
+    "Szelma",
+    "Szelma2",
+    "Szelma3",
+    "Szelma4",
+    "Szelma5",
+    "Szelma6",
+    "Szelma7"
+  ]
+}

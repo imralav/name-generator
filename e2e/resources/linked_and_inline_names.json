@@ -1,0 +1,11 @@
+{
+  "pattern": "{name} {surname}",
+  "files": {
+    "name": [
+      "name.json"
+    ]
+  },
+  "surname": [
+    "Nowak"
+  ]
+}

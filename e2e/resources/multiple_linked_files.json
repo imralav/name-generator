@@ -1,0 +1,9 @@
+{
+  "pattern": "{name}",
+  "files": {
+    "name": [
+      "empty_name.json",
+      "name.json"
+    ]
+  }
+}

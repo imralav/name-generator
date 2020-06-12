@@ -1,0 +1,6 @@
+{
+  "pattern": "{name}",
+  "files": {
+    "name": ["name.json"]
+  }
+}

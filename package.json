@@ -1,0 +1,31 @@
+{
+  "name": "name-generator",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test-unit": "jest --LOG_LEVEL=info --config=jest.unit.config.js",
+    "test-e2e": "jest --LOG_LEVEL=info --config=jest.e2e.config.js",
+    "test": "jest --LOG_LEVEL=info",
+    "coverage": "jest --coverage --LOG_LEVEL=info",
+    "build": "tsc",
+    "start": "npm run build && node dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/inquirer": "^6.5.0",
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.4",
+    "@types/yargs": "^15.0.5",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.0.0",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "inquirer": "^7.1.0",
+    "winston": "^3.2.1",
+    "yargs": "^15.3.1"
+  }
+}
