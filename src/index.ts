@@ -1,12 +1,12 @@
 import logger from './logger';
 import {generateMultipleNamesFromOptions} from "./generator/GeneratorOptionsLoader";
 import {argv} from "yargs";
-import {operateCli} from "./generator/cli";
+import {operateCli} from "./generator/cli/cli";
 
-const cli = argv.cli;
+const cliRequested = argv.cli;
 
-if (cli) {
-    operateCli('start');
+if (cliRequested) {
+    operateCli();
 } else {
     const namesToGenerate = argv.amount as number || 1;
     const optionsFile = argv.optionsFile as string;

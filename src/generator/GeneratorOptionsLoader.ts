@@ -11,13 +11,17 @@ function generateSingleNameFromOptions(optionsFile: string): Promise<string> {
         .then(generator => generator.generate());
 }
 
+function loadInlineAndLinkedOptions(optionsFile: string): Promise<NameGeneratorOptions> {
+    return loadInlineOptions(optionsFile)
+        .then(optionsAndPath => loadLinkedOptions(optionsAndPath));
+}
+
 function generatorFromOptions(optionsFile: string) {
-    return loadOptions(optionsFile)
-        .then(optionsAndPath => loadLinkedNameFiles(optionsAndPath))
+    return loadInlineAndLinkedOptions(optionsFile)
         .then(options => new NameGenerator(options));
 }
 
-function loadLinkedNameFiles(optionsAndPath: [NameGeneratorOptions, string]) {
+function loadLinkedOptions(optionsAndPath: [NameGeneratorOptions, string]) : Promise<NameGeneratorOptions> {
     const options = optionsAndPath[0];
     const optionsFilePath = path.dirname(optionsAndPath[1]);
     if (options.files) {
@@ -37,7 +41,7 @@ function loadLinkedNameFiles(optionsAndPath: [NameGeneratorOptions, string]) {
         return Promise.all(currentLinkLoadPromises)
             .then(() => options);
     }
-    return options;
+    return Promise.resolve(options);
 }
 
 function generateMultipleNamesFromOptions(optionsFile: string, amount: number): Promise<Array<string>> {
@@ -52,7 +56,7 @@ function generateMultipleNamesFromOptions(optionsFile: string, amount: number): 
         });
 }
 
-function loadOptions(optionsFile: string): Promise<[NameGeneratorOptions, string]> {
+function loadInlineOptions(optionsFile: string): Promise<[NameGeneratorOptions, string]> {
     if (optionsFile) {
         let optionsFilePath = path.join(process.cwd(), optionsFile);
         logger.debug('Loading options from %s', optionsFilePath);
@@ -84,4 +88,4 @@ async function readFile(pathToFile: string): Promise<string> {
     });
 }
 
-export {generateSingleNameFromOptions, generateMultipleNamesFromOptions};
+export {generateSingleNameFromOptions, generateMultipleNamesFromOptions, loadInlineAndLinkedOptions};

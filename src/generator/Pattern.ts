@@ -59,7 +59,7 @@ class Pattern {
         logger.debug(`Generating name for pattern ${this.pattern}`);
         let pattern: string = this.pattern;
         this.placeholdersAndNames.forEach(placeholderAndName => {
-            pattern = pattern.replace(`{${placeholderAndName.placeholder}}`, placeholderAndName.getRandomName() as string);
+            pattern = pattern.replace(`{${placeholderAndName.placeholder}}`, placeholderAndName.getRandomName());
         });
         return pattern;
     }

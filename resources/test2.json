@@ -1,0 +1,16 @@
+{
+  "pattern": "{shortName} {shortSurname}",
+  "shortName": [
+    "Robert",
+    "Robert2",
+    "Robert3",
+    "Robert4",
+    "Robert5"
+  ],
+  "shortSurname": [
+    "Salmon",
+    "Salmon2",
+    "Salmon3",
+    "Salmon4"
+  ]
+}
